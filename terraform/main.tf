@@ -34,19 +34,6 @@ resource "aws_s3_bucket" "vicci_bookshelf_bucket" {
   }
 }
 
-resource "aws_db_instance" "bookshelf_db" {
-  allocated_storage    = 100
-  db_subnet_group_name = "db-subnetgrp"
-  engine               = "postgres"
-  engine_version       = "11.5"
-  identifier           = "muffy-test"
-  instance_class       = "db.m5.large"
-  password             = "password"
-  skip_final_snapshot  = true
-  storage_encrypted    = true
-  username             = "postgres"
-}
-
 output "ip" {
   value = aws_eip.ip.public_ip
 }
