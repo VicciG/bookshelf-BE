@@ -8,8 +8,6 @@ public class BookshelfApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BookshelfApplication.class, args);
-        BookshelfController ctrl = new BookshelfController();
-        ctrl.sayHello("Vicci");
 
     }
 
