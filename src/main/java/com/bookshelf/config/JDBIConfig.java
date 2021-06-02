@@ -1,6 +1,6 @@
-package com.bookshelf.bookshelf.config;
+package com.bookshelf.config;
 
-import com.bookshelf.bookshelf.book.BookDao;
+import com.bookshelf.book.BookDao;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import org.springframework.beans.factory.annotation.Value;

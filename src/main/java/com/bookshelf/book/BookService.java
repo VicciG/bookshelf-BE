@@ -1,6 +1,6 @@
-package com.bookshelf.bookshelf.book;
+package com.bookshelf.book;
 
-import com.bookshelf.bookshelf.exceptions.DataNotFoundException;
+import com.bookshelf.exceptions.DataNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

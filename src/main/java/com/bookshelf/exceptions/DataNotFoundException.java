@@ -1,4 +1,4 @@
-package com.bookshelf.bookshelf.exceptions;
+package com.bookshelf.exceptions;
 
 public class DataNotFoundException extends RuntimeException {
 

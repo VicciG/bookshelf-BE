@@ -1,4 +1,4 @@
-package com.bookshelf.bookshelf.book;
+package com.bookshelf.book;
 
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.BindBean;

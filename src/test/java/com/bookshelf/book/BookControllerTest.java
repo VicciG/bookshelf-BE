@@ -1,4 +1,4 @@
-package com.bookshelf.bookshelf.book;
+package com.bookshelf.book;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;

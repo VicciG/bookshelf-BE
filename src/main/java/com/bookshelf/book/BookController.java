@@ -1,9 +1,8 @@
-package com.bookshelf.bookshelf.book;
+package com.bookshelf.book;
 
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/book")

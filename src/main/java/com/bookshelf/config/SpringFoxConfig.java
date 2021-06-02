@@ -1,4 +1,4 @@
-package com.bookshelf.bookshelf.config;
+package com.bookshelf.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

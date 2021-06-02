@@ -1,4 +1,4 @@
-package com.bookshelf.bookshelf.book;
+package com.bookshelf.book;
 
 import org.junit.Assert;
 import org.junit.Before;
