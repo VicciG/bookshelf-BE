@@ -22,8 +22,12 @@ public class BookService implements BookServiceInterface {
         return books;
     }
 
-    public Book getBookById(int id) {
-        return bookDao.getBookById(id);
+    public Book getBookById(int id) throws DataNotFoundException{
+        Book book = bookDao.getBookById(id);
+        if(book == null){
+            throw new DataNotFoundException();
+        }
+        return book;
     }
 
     public int createBookTable() {
