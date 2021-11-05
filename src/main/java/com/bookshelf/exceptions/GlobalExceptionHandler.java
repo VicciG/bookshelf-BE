@@ -15,7 +15,7 @@ import java.util.Map;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         @ExceptionHandler(DataNotFoundException.class)
-        public ResponseEntity<Object> handleCityNotFoundException(
+        public ResponseEntity<Object> handleDataNotFoundException(
                 DataNotFoundException ex, WebRequest request) {
 
             Map<String, Object> body = new LinkedHashMap<>();

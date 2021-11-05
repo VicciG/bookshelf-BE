@@ -17,7 +17,6 @@ public class BookServiceTest {
         dao = Mockito.mock(BookDao.class);
         service = new BookService(dao);
     }
-    //check sizes of lists
     @Test
     public void getAllBooksTest(){
         List<Book> books = new ArrayList<>();
@@ -26,6 +25,7 @@ public class BookServiceTest {
 
         List<Book> result = this.service.getAllBooks();
         Assert.assertEquals(books, result);
+        Assert.assertEquals(1, books.size());
     }
 
     @Test

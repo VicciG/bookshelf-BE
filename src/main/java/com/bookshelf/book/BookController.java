@@ -1,5 +1,6 @@
 package com.bookshelf.book;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,14 +21,15 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public Book getBookById(@PathVariable int id){
+    public Book getBookById(@PathVariable int id) throws Exception{
         return bookService.getBookById(id);
     }
 
 
-    @PostMapping("/create")
-    public void createBookTable(){
-        bookService.createBookTable();
+    @GetMapping( "/create")
+    public int createBookTable(){
+
+       return bookService.createBookTable();
     }
 
     @PostMapping()

@@ -17,8 +17,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -42,26 +41,30 @@ public class BookControllerTest {
     @Test
     public void shouldCreateBookTable() throws Exception{
         when(service.createBookTable()).thenReturn(1);
-        this.mockMvc.perform(post("/book/create")).andDo(print()).andExpect(status().isOk());
-        // CHECK RETURN TYPE
+        this.mockMvc.perform(get("/book/create"))
+                .andDo(print())
+                .andExpect(status().isOk());
     }
     @Test
     public void shouldGetAllBooks() throws Exception{
         List<Book> books = new ArrayList<Book>();
-        //books not being added properly??
         Book book = new Book( 1,"test", "test", "test");
         books.add(book);
         when(service.getAllBooks()).thenReturn(books);
-        this.mockMvc.perform(get("/book")).andExpect((status().isOk())).andExpect(content().string(containsString(book.getAuthor())));
-        //CHECK LIST SIZE AND RETURN TYPE JSON
+        this.mockMvc.perform(get("/book"))
+                .andExpect((status().isOk()))
+                .andExpect(content().string(containsString(book.getAuthor())))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
 
     }
     @Test
     public void shouldGetBookById() throws Exception{
         Book book = new Book(1, "test", "test", "test");
         when(service.getBookById(1)).thenReturn(book);
-        this.mockMvc.perform(get("/book/1")).andExpect((status().isOk())).andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
-        //CHECK OBJECT EQUALS EXPECTED
+        this.mockMvc.perform(get("/book/1"))
+                .andExpect((status().isOk())).andExpect(content()
+                .string(containsString(book.getAuthor())))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
     }
     @Test
     public void shouldInsertBook() throws Exception{
@@ -74,5 +77,6 @@ public class BookControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("1")));
     }
-//CHECKING STATUS, MEDIA TYPE, ACTUAL DATA RETURNED
+
+
 }
