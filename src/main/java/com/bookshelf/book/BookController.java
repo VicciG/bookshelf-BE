@@ -26,7 +26,7 @@ public class BookController {
     }
 
 
-    @GetMapping( "/create")
+    @PostMapping( "/create")
     public int createBookTable(){
 
        return bookService.createBookTable();
